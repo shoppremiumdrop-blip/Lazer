@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Salon Hidayet | Lazer & Müşteri Takip Sistemi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            cream: '#FAF7F5',
+            blush: '#F4EAE6',
+            rosegold: '#C58B7D',
+            rosegoldDark: '#A86D5F',
+            charcoal: '#231F20',
+            taupe: '#7A6E6B'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF7F5;
+      color: #231F20;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(197, 139, 125, 0.22);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen pb-24">
+
+  <!-- Üst Başlık (Header) -->
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-rosegold/20 px-4 py-3.5 shadow-sm">
+    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2">
+      <div>
+        <span class="text-[10px] tracking-[0.22em] uppercase text-rosegold font-bold block">Hair & Makeup Studio</span>
+        <h1 class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-charcoal leading-none">
+          Salon Hidayet <span class="text-rosegold font-normal italic text-xl sm:text-2xl">Lazer Paneli</span>
+        </h1>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div id="dbStatusBadge" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200">
+          <span id="dbStatusDot" class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          <span id="dbStatusText">Bağlanıyor...</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 pt-5 space-y-6">
+
+    <!-- Özet İstatistik Kartları -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="glass-card rounded-2xl p-4 shadow-sm">
+        <p class="text-xs text-taupe font-medium">Bugünkü Randevu</p>
+        <p id="statTodayCount" class="text-2xl font-bold text-charcoal mt-1">0</p>
+      </div>
+      <div class="glass-card rounded-2xl p-4 shadow-sm">
+        <p class="text-xs text-taupe font-medium">Toplam Müşteri</p>
+        <p id="statCustomerCount" class="text-2xl font-bold text-charcoal mt-1">0</p>
+      </div>
+      <div class="glass-card rounded-2xl p-4 shadow-sm">
+        <p class="text-xs text-taupe font-medium">Tahsil Edilen</p>
+        <p id="statTotalPaid" class="text-2xl font-bold text-emerald-700 mt-1">₺0</p>
+      </div>
+      <div class="glass-card rounded-2xl p-4 shadow-sm">
+        <p class="text-xs text-taupe font-medium">Kalan Bakiye</p>
+        <p id="statTotalRemaining" class="text-2xl font-bold text-rosegoldDark mt-1">₺0</p>
+      </div>
+    </section>
+
+    <!-- Hızlı Aksiyon Butonları -->
+    <section class="grid grid-cols-2 gap-3">
+      <button onclick="openModal('appointmentModal')" class="flex items-center justify-center gap-2 bg-charcoal hover:bg-neutral-800 active:scale-[0.99] text-white font-semibold py-3.5 px-4 rounded-2xl shadow-md transition">
+        <svg class="w-5 h-5 text-rosegold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span>Yeni Randevu</span>
+      </button>
+      <button onclick="openModal('customerModal')" class="flex items-center justify-center gap-2 bg-rosegold hover:bg-rosegoldDark active:scale-[0.99] text-white font-semibold py-3.5 px-4 rounded-2xl shadow-md transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+        <span>Yeni Müşteri Kaydı</span>
+      </button>
+    </section>
+
+    <!-- Sekme Geçişleri -->
+    <div class="flex bg-blush/80 p-1 rounded-2xl border border-rosegold/20">
+      <button id="tabAppointmentsBtn" onclick="switchTab('appointments')" class="flex-1 py-2.5 text-sm font-semibold rounded-xl bg-white text-charcoal shadow-sm transition">
+        Randevu Takvimi
+      </button>
+      <button id="tabCustomersBtn" onclick="switchTab('customers')" class="flex-1 py-2.5 text-sm font-semibold rounded-xl text-taupe hover:text-charcoal transition">
+        Müşteriler & Paketler
+      </button>
+    </div>
+
+    <!-- RANDEVULAR SEKMESİ -->
+    <section id="appointmentsSection" class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3.5 rounded-2xl border border-rosegold/20 shadow-sm">
+        <div class="flex items-center gap-2">
+          <label for="filterDate" class="text-xs font-semibold uppercase tracking-wider text-taupe">Tarih:</label>
+          <input type="date" id="filterDate" class="bg-cream border border-rosegold/30 rounded-xl px-3 py-1.5 text-sm font-medium text-charcoal focus:outline-none focus:border-rosegold">
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="setTodayFilter()" class="text-xs font-semibold px-3 py-1.5 rounded-xl bg-blush text-rosegoldDark hover:bg-rosegold/20 transition">Bugün</button>
+          <button onclick="clearDateFilter()" class="text-xs font-semibold px-3 py-1.5 rounded-xl bg-cream text-taupe hover:text-charcoal border border-neutral-200 transition">Tüm Tarihler</button>
+        </div>
+      </div>
+
+      <div id="appointmentsList" class="space-y-3">
+        <!-- Randevu kartları buraya dinamik gelecek -->
+      </div>
+    </section>
+
+    <!-- MÜŞTERİLER SEKMESİ -->
+    <section id="customersSection" class="hidden space-y-4">
+      <div class="relative">
+        <input type="text" id="customerSearchInput" oninput="renderCustomers()" placeholder="Müşteri adı, telefon veya bölge ara..." class="w-full bg
