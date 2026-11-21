@@ -1,1 +1,701 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Enes Deva Kimdir? | Genç Girişimci & Deva Protokol</title>
+
+  <meta name="description" content="Enes Deva, genç girişimci ve Deva Protokol / Hizmetler markasının kurucusu. Kişisel vizyonu, hizmetleri ve projeleri hakkında bilgi edinin.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Enes Deva">
+  <meta name="theme-color" content="#080808">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Enes Deva | Genç Girişimci">
+  <meta property="og:description" content="Enes Deva ve Deva Protokol / Hizmetler hakkında resmi tanıtım sayfası.">
+  <meta property="og:locale" content="tr_TR">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Enes Deva">
+  <meta name="twitter:description" content="Genç girişimci | Deva Protokol / Hizmetler">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google uyumlu yapılandırılmış veri -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Enes Deva",
+    "jobTitle": "Genç Girişimci",
+    "url": "",
+    "sameAs": [
+      "https://www.instagram.com/enes.deva/"
+    ],
+    "founder": {
+      "@type": "Organization",
+      "name": "Deva Protokol / Hizmetler"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Deva Protokol / Hizmetler"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --black: #080808;
+      --gold: #d6a83e;
+      --gold-light: #f2d27a;
+      --white: #f5f1e8;
+      --gray: #b8b2a5;
+      --line: rgba(214,168,62,.45);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #080808;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      color: var(--gold);
+      font-size: 37px;
+      font-weight: 700;
+      border-right: 1px solid var(--gold);
+      padding-right: 15px;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-size: 22px;
+      color: var(--gold);
+      line-height: 1.15;
+      letter-spacing: 1px;
+    }
+
+    .brand-sub {
+      font-family: Montserrat, sans-serif;
+      font-size: 9px;
+      letter-spacing: 1.3px;
+      color: var(--gray);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 17px;
+    }
+
+    .nav-links a {
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .instagram-btn, .gold-btn {
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      padding: 9px 20px;
+      color: var(--gold-light);
+      transition: .25s;
+      display: inline-block;
+    }
+
+    .instagram-btn:hover, .gold-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      padding: 7px 11px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 390px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 75px 20px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--gold);
+      background:
+        linear-gradient(135deg, transparent 15%, rgba(214,168,62,.08) 15.2%, transparent 15.7%),
+        linear-gradient(315deg, transparent 78%, rgba(214,168,62,.07) 78.2%, transparent 78.7%),
+        #080808;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 7px;
+      color: var(--gold-light);
+      font-size: 15px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 9vw, 100px);
+      color: var(--gold);
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin: 10px 0;
+    }
+
+    .hero-subtitle {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(12px, 2vw, 17px);
+      letter-spacing: 4px;
+      color: var(--white);
+    }
+
+    .hero-quote {
+      margin: 24px 0;
+      font-size: 23px;
+      font-style: italic;
+      color: var(--gray);
+    }
+
+    .gold-btn {
+      border-radius: 5px;
+      font-weight: 600;
+      padding: 11px 28px;
+    }
+
+    /* ABOUT + SERVICES */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 55px;
+      padding: 55px 0;
+    }
+
+    .section-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 600;
+      margin: 10px 0 20px;
+      line-height: 1.2;
+    }
+
+    h2 span {
+      color: var(--gold);
+    }
+
+    .about p {
+      color: #d4d0c8;
+      font-size: 19px;
+      margin-bottom: 18px;
+    }
+
+    .services {
+      border-left: 1px solid var(--line);
+      padding-left: 40px;
+    }
+
+    .service {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin: 22px 0;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--gold);
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .service h3 {
+      color: var(--white);
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .service p {
+      color: var(--gray);
+      font-size: 16px;
+    }
+
+    /* VALUES */
+    .values {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 25px 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .value {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+    }
+
+    .value-icon {
+      color: var(--gold);
+      font-size: 28px;
+    }
+
+    .value p {
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 35px 0 18px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-quote {
+      color: var(--gold-light);
+      font-style: italic;
+      font-size: 23px;
+    }
+
+    .footer-social a {
+      color: var(--gold);
+      margin-right: 14px;
+      font-family: Montserrat, sans-serif;
+      font-size: 13px;
+    }
+
+    .footer-social a:hover {
+      color: var(--white);
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid var(--line);
+      margin-top: 28px;
+      padding-top: 15px;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        background: #080808;
+        border-bottom: 1px solid var(--gold);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .navbar {
+        min-height: 72px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .instagram-btn {
+        display: none;
+      }
+
+      .main-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 40px 0;
+      }
+
+      .services {
+        border-left: none;
+        border-top: 1px solid var(--line);
+        padding: 30px 0 0;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+
+      .hero {
+        min-height: 320px;
+        padding: 55px 15px;
+      }
+
+      .eyebrow {
+        letter-spacing: 4px;
+      }
+
+      .hero-subtitle {
+        letter-spacing: 2px;
+      }
+
+      .hero-quote {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 92%;
+      }
+
+      .brand-logo {
+        font-size: 30px;
+        padding-right: 10px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .brand-sub {
+        font-size: 8px;
+      }
+
+      .hero {
+        min-height: 290px;
+      }
+
+      h1 {
+        font-size: 48px;
+        letter-spacing: 0;
+      }
+
+      .hero-quote {
+        font-size: 18px;
+      }
+
+      .main-grid {
+        padding: 32px 0;
+      }
+
+      .about p {
+        font-size: 17px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .value {
+        gap: 8px;
+      }
+
+      .value-icon {
+        font-size: 23px;
+      }
+
+      .value p {
+        font-size: 14px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-quote {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#anasayfa" class="brand" aria-label="Enes Deva ana sayfa">
+      <div class="brand-logo">ED</div>
+      <div>
+        <div class="brand-name">ENES DEVA</div>
+        <div class="brand-sub">DEVA PROTOKOL / HİZMETLER</div>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Menüyü aç veya kapat" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#anasayfa">Ana Sayfa</a>
+      <a href="#hakkimda">Hakkımda</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#projeler">Projeler</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+
+    <a class="instagram-btn" href="https://www.instagram.com/enes.deva/" target="_blank" rel="noopener noreferrer">
+      Instagram ↗
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- ANA SAYFA -->
+  <section class="hero" id="anasayfa">
+    <div class="hero-content">
+      <p class="eyebrow">Genç Girişimci</p>
+      <h1>ENES DEVA</h1>
+      <p class="hero-subtitle">DEVA PROTOKOL / HİZMETLER</p>
+
+      <p class="hero-quote">
+        “Hayaller büyük, hedefler net.<br>
+        Daha güçlü bir gelecek için çalışıyorum.”
+      </p>
+
+      <a href="#hizmetler" class="gold-btn">Hizmetleri Keşfet →</a>
+    </div>
+  </section>
+
+  <!-- HAKKIMDA -->
+  <section class="container main-grid">
+    <article class="about" id="hakkimda">
+      <p class="section-label">Hakkımda</p>
+      <h2>Enes Deva <span>Kimdir?</span></h2>
+
+      <p>
+        Enes Deva, genç girişimci kimliğiyle iş dünyasında
+        fark yaratmayı hedefleyen, vizyon sahibi bir isimdir.
+        Deva Protokol / Hizmetler markasının kurucusu olarak,
+        kendi girişimini geliştirmeye ve yeni projeler üretmeye odaklanmaktadır.
+      </p>
+
+      <p>
+        Girişimcilik yolculuğunda gelişimi, profesyonelliği ve
+        kaliteli hizmet anlayışını ön planda tutarak geleceğe yönelik
+        hedefleri doğrultusunda ilerlemektedir.
+      </p>
+
+      <a href="#projeler" class="gold-btn">Projelerim →</a>
+    </article>
+
+    <!-- HİZMETLER -->
+    <aside class="services" id="hizmetler">
+      <p class="section-label">Hizmetlerimiz</p>
+      <h2>Deva <span>Hizmetleri</span></h2>
+
+      <div class="service">
+        <div class="service-icon">◇</div>
+        <div>
+          <h3>Protokol Hizmetleri</h3>
+          <p>Profesyonel çözümler</p>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">✧</div>
+        <div>
+          <h3>Danışmanlık</h3>
+          <p>Planlama ve yönlendirme</p>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">★</div>
+        <div>
+          <h3>Organizasyon</h3>
+          <p>Özel proje ve organizasyonlar</p>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">⚙</div>
+        <div>
+          <h3>Kurumsal Çözümler</h3>
+          <p>Proje odaklı hizmetler</p>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- PROJELER -->
+  <section class="container" id="projeler" style="padding: 10px 0 45px;">
+    <p class="section-label">Vizyon & Hedefler</p>
+    <h2>Geleceğe <span>Yönelik Projeler</span></h2>
+    <p style="color:var(--gray); max-width:750px; font-size:19px;">
+      Deva Protokol / Hizmetler bünyesinde geliştirilecek projeler,
+      yenilikçi fikirler ve sürdürülebilir gelişim hedefiyle şekillenmektedir.
+      Yeni çalışmalar ve projeler bu sayfada paylaşılacaktır.
+    </p>
+  </section>
+
+  <!-- DEĞERLER -->
+  <section class="values">
+    <div class="container values-grid">
+      <div class="value">
+        <span class="value-icon">♜</span>
+        <p>Genç Girişimci<br>Vizyonu</p>
+      </div>
+
+      <div class="value">
+        <span class="value-icon">◇</span>
+        <p>Güvenilir Hizmet<br>Anlayışı</p>
+      </div>
+
+      <div class="value">
+        <span class="value-icon">↗</span>
+        <p>Sürekli Gelişim<br>Hedefi</p>
+      </div>
+
+      <div class="value">
+        <span class="value-icon">★</span>
+        <p>Kaliteli ve<br>Profesyonel Yaklaşım</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer id="iletisim">
+  <div class="container footer-top">
+    <a href="#anasayfa" class="brand">
+      <div class="brand-logo">ED</div>
+      <div>
+        <div class="brand-name">ENES DEVA</div>
+        <div class="brand-sub">DEVA PROTOKOL / HİZMETLER</div>
+      </div>
+    </a>
+
+    <p class="footer-quote">“Başarı, doğru adımlarla başlar.”</p>
+
+    <div class="footer-social">
+      <strong>Bizi Takip Edin</strong><br><br>
+      <a href="https://www.instagram.com/enes.deva/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> Enes Deva. Tüm Hakları Saklıdır. |
+    Deva Protokol / Hizmetler
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  // Menüden seçim yapılınca mobil menüyü kapat
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  // Güncel yıl
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
